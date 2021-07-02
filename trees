@@ -1,0 +1,64 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib as plt
+from sklearn import tree
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+
+df = pd.read_csv('/Users/cram/Downloads/train_data_tree.csv')
+clf = tree.DecisionTreeClassifier(criterion = 'entropy')
+x = df[['sex', 'exang']]
+y = df.num
+clf.fit(x,y)
+tree.plot_tree(clf,filled=True)
+
+l_node = clf.tree_.children_left[0] # индекс корня левого поддерева
+n1 = clf.tree_.n_node_samples[l_node] # сэмплов в левом поддереве
+e1 = clf.tree_.impurity[l_node] # энтропия в корне левого поддерева
+
+r_node = clf.tree_.children_right[0] # индекс корня левого поддерева
+n0 = clf.tree_.n_node_samples[r_node] # сэмплов в левом поддереве
+e0 = clf.tree_.impurity[r_node] # энтропия в корне левого поддерева
+
+N=n0+n1
+IG = 0.996 - (n0*e0 + n1*e1)/N
+###########################################################################
+
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.25, train_size=0.75)
+
+dt = DecisionTreeClassifier()
+dt.fit(X_train,y_train)
+tree.plot_tree(dt,filled=True)
+
+predicted = dt.predict(X_test)
+##############################################################################
+
+parametrs = {'criterion': ['entropy'],
+             'max_depth': range(1,10),
+             'min_samples_split': range(2,10),
+             'min_samples_leaf': range(1,10)}
+             
+search = GridSearchCV(dt, parametrs)
+search.fit(X, y)
+best_tree = search.best_estimator_
+##############################################################################
+
+parametrs = {'criterion': ['entropy'],
+             'max_depth': range(1,10),
+             'min_samples_split': range(2,10),
+             'min_samples_leaf': range(1,10)}
+             
+dt = DecisionTreeClassifier()
+search = RandomizedSearchCV(dt, parametrs, n_iter=20)
+search.fit(X, y) 
+best_tree = search.best_estimator_
