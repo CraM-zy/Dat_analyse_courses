@@ -1,0 +1,11 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import datetime as dt
+
+data = pd.read_csv('https://stepik.org/media/attachments/course/4852/submissions_data_train.zip')
+data[data.submission_status == "wrong"].groupby(['user_id', 'step_id'], as_index=False) \
+                                       .agg({'timestamp':'max'}) \ 
+                                       .step_id.value_counts() \
+                                       .keys()[0]
