@@ -7,7 +7,7 @@ From Jupyter Notebook
 <br> 3. https://github.com/CraM-zy/Date_analyse/blob/main/Students_data.ipynb
 <br>
 <br> Trees and forests:
-<br> 1. https://github.com/CraM-zy/Date_analyse/blob/main/Random_forest.ipynb
+<br> 1. https://github.com/CraM-zy/Date_analyse/blob/main/Random_Forest-2.ipynb
 <br> 2. https://github.com/CraM-zy/Date_analyse/blob/main/TREE_ROC.ipynb
 <br> 3. https://github.com/CraM-zy/Date_analyse/blob/main/trees_base.ipynb
 <br>
