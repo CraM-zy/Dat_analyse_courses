@@ -1,6 +1,10 @@
 # Date_analyse
 From Jupyter Notebook
 <br>
+<br> Probationary period in SoftTeco (ML Engineer):
+<br> Folder with project: https://github.com/CraM-zy/Date_analyse/tree/main/ML%20practice
+<br> With data from: https://archive.ics.uci.edu/ml/datasets/Adult
+<br>
 <br> Analyse DataFrames:
 <br> 1. https://github.com/CraM-zy/Date_analyse/blob/main/Analyse_users.ipynb 
 <br> 2. https://github.com/CraM-zy/Date_analyse/blob/main/Stepik_analyse.ipynb
@@ -18,3 +22,5 @@ From Jupyter Notebook
 <br> 1. https://github.com/CraM-zy/Date_analyse/blob/main/Plots_impulseSignal.ipynb
 <br> 2. https://github.com/CraM-zy/Date_analyse/blob/main/elements_on_plata.ipynb
 <br> 3. https://github.com/CraM-zy/Date_analyse/blob/main/Zadachi_lineynogo_program.ipynb
+<br>
+<br> 
